@@ -1,0 +1,47 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Add Internet Identity login/logout to Pulse",
+  "requirements": [
+    {
+      "id": "REQ-13",
+      "summary": "Add Internet Identity login/logout button to navigation sidebar and mobile tab bar",
+      "acceptanceCriteria": [
+        "A 'Log In' button is visible in the navigation bar when the user is not authenticated.",
+        "Clicking 'Log In' triggers the Internet Identity authentication flow via the existing `useInternetIdentity` hook.",
+        "After successful login, the navigation bar replaces the 'Log In' button with an authenticated user indicator (avatar/principal truncated) and a 'Log Out' button.",
+        "Clicking 'Log Out' calls the `logout` function and returns the UI to the unauthenticated state.",
+        "The login/logout button is accessible on both the desktop sidebar and mobile bottom tab bar layouts.",
+        "The login UI matches the existing coral/rose theme and respects dark/light mode."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Navigation.tsx",
+          "operation": "modify",
+          "description": "Import and call the `useInternetIdentity` hook to access `isAuthenticated`, `identity`, `login`, and `logout`. In the desktop sidebar, add a new section below the theme toggle that shows a 'Log In' button when unauthenticated (using the hook's `login` function) or displays the truncated principal (first 5 + '...' + last 3 characters) with a 'Log Out' button when authenticated (using the hook's `logout` function). Mirror this login/logout UI in the mobile bottom tab bar by adding a new tab item or inline control. Style the buttons using existing Tailwind classes to match the coral/rose theme and respect dark/light mode."
+        }
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "summary": "Display logged-in user's Internet Identity principal in navigation and Profile page header when authenticated",
+      "acceptanceCriteria": [
+        "When authenticated, the Profile navigation link shows the user's principal (e.g., first 5 + '...' + last 3 chars) or a generic 'You' label.",
+        "When unauthenticated, the Profile page continues to display mock data as before.",
+        "No changes to immutable hook files (`useInternetIdentity.ts`, `useActor.ts`)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Navigation.tsx",
+          "operation": "modify",
+          "description": "Import and call the `useInternetIdentity` hook to check `isAuthenticated` and `identity`. When the user is authenticated, replace the 'My Profile' nav link label with a truncated principal (first 5 + '...' + last 3 characters) or a generic 'You' label. When unauthenticated, keep the existing 'My Profile' label. Ensure this logic applies to both the desktop sidebar and the mobile bottom tab bar Profile link."
+        },
+        {
+          "path": "frontend/src/pages/Profile.tsx",
+          "operation": "modify",
+          "description": "Import and call the `useInternetIdentity` hook to access `isAuthenticated` and `identity`. When authenticated, update the profile header to display the truncated principal (first 5 + '...' + last 3 characters) in place of the mock username. When unauthenticated, continue displaying the existing mock user data from `mockData.ts`. Apply this conditional rendering to the username display in the header section without modifying the avatar, bio, or stats components."
+        }
+      ]
+    }
+  ]
+}

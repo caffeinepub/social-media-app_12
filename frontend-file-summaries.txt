@@ -1,0 +1,21 @@
+{
+  "frontend/src/index.css": "Global styles with OKLCH color system featuring warm coral/rose palette for light mode and deep charcoal for dark mode, custom scrollbar, story ring gradient, post image gradients, and animation keyframes.",
+  "frontend/tailwind.config.js": "Extended Tailwind config with Inter font family, coral/rose color tokens, enhanced border radius scale, card shadow utilities, and animation keyframes.",
+  "frontend/src/data/mockData.ts": "Complete mock data file with TypeScript interfaces and 10 users, 15 posts, 8+ notifications, 8 stories, 10 trending hashtags, and mock comments with helper utilities.",
+  "frontend/src/contexts/ThemeContext.tsx": "React context providing dark/light theme state with localStorage persistence and a toggle function, applied via CSS class on the document root.",
+  "frontend/src/components/AvatarPlaceholder.tsx": "Reusable avatar component rendering colored circles with user initials in multiple sizes (xs/sm/md/lg/xl).",
+  "frontend/src/components/Navigation.tsx": "Responsive navigation with desktop sidebar and mobile bottom tab bar, now including Internet Identity login/logout — shows a coral \"Log In\" button with spinner when unauthenticated, and a truncated principal display plus \"Log Out\" button when authenticated; the Profile nav label also updates to show the truncated principal (desktop) or \"You\" (mobile) when logged in.",
+  "frontend/src/components/StoriesBar.tsx": "Horizontally scrollable stories bar with circular avatars, gradient story rings, seen/unseen states, and a story viewer dialog on click.",
+  "frontend/src/components/PostCard.tsx": "Interactive post card with avatar, username, text with hashtag highlighting, optional gradient image, like/comment/share/save buttons, and expandable inline comment section. Fixed Link `to` prop to use static route path `/profile/$userId` with separate `params` object instead of interpolated string.",
+  "frontend/src/components/PostComposer.tsx": "Post creation form with auto-resizing textarea, gradient image picker, and submit button that prepends new posts to the feed.",
+  "frontend/src/components/TrendingSidebar.tsx": "Right sidebar showing top trending hashtags with post counts and category badges, plus suggested users to follow.",
+  "frontend/src/components/Layout.tsx": "App shell wrapping all pages with the Navigation component, main content area with proper desktop sidebar offset, and Sonner toast provider.",
+  "frontend/src/pages/Home.tsx": "Home feed page with StoriesBar, PostComposer, scrollable PostCard list, and a sticky TrendingSidebar on desktop.",
+  "frontend/src/pages/Profile.tsx": "User profile page with cover gradient, avatar, bio, stats, follow button, and tabbed posts/media/likes sections; when the user is authenticated via Internet Identity and viewing the own profile (u1), the display name and handle are replaced with the truncated/full principal string, otherwise mock data is shown as before.",
+  "frontend/src/pages/Notifications.tsx": "Notifications page with type-differentiated items (like/comment/follow/mention), unread indicators, filter tabs, and mark-all-read functionality.",
+  "frontend/src/pages/Search.tsx": "Search page with real-time filtering across users, hashtags, and posts, empty state, and trending sidebar on desktop. Fixed Link `to` prop to use static route path `/profile/$userId` with separate `params` object instead of interpolated string.",
+  "frontend/src/pages/CreatePost.tsx": "Dedicated create post page wrapping PostComposer with a back button, navigating to home on submission.",
+  "frontend/src/hooks/useQueries.ts": "Placeholder file for React Query hooks; no backend queries needed as all data is mock/in-memory.",
+  "frontend/src/App.tsx": "Main app entry with TanStack Router setup, ThemeProvider wrapping, and all routes (home, search, create, notifications, profile) registered under a shared Layout root route.",
+  "frontend/src/lib/utils.ts": "Utility function combining clsx and tailwind-merge for conditional className composition."
+}

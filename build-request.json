@@ -1,0 +1,62 @@
+{
+  "kind": "build_request",
+  "title": "Add Internet Identity login/logout to Pulse",
+  "projectName": "Pulse",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-13",
+      "text": "Add an Internet Identity login button to the navigation sidebar (desktop) and mobile bottom tab bar. When the user is not authenticated, show a 'Log In' button using the `useInternetIdentity` hook's `login` function. When authenticated, show the user's avatar/principal and a 'Log Out' button that calls the `logout` function.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "add login option"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A 'Log In' button is visible in the navigation bar when the user is not authenticated.",
+        "Clicking 'Log In' triggers the Internet Identity authentication flow via the existing `useInternetIdentity` hook.",
+        "After successful login, the navigation bar replaces the 'Log In' button with an authenticated user indicator (avatar/principal truncated) and a 'Log Out' button.",
+        "Clicking 'Log Out' calls the `logout` function and returns the UI to the unauthenticated state.",
+        "The login/logout button is accessible on both the desktop sidebar and mobile bottom tab bar layouts.",
+        "The login UI matches the existing coral/rose theme and respects dark/light mode."
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "text": "Display the logged-in user's Internet Identity principal (truncated) in place of the generic 'My Profile' entry in the navigation and on the Profile page header when authenticated. When unauthenticated, fall back to the existing mock profile display.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "add login option"
+        ]
+      },
+      "acceptanceCriteria": [
+        "When authenticated, the Profile navigation link shows the user's principal (e.g., first 5 + '...' + last 3 chars) or a generic 'You' label.",
+        "When unauthenticated, the Profile page continues to display mock data as before.",
+        "No changes to immutable hook files (`useInternetIdentity.ts`, `useActor.ts`)."
+      ]
+    }
+  ],
+  "constraints": [
+    "Use only the existing `useInternetIdentity` hook in `frontend/src/hooks/useInternetIdentity.ts` for authentication — do not implement a custom auth solution.",
+    "Do not modify any files under `frontend/src/hooks/` or `frontend/src/components/ui/` or `frontend/src/main.tsx`.",
+    "No backend changes are required for this feature; authentication is purely client-side via Internet Identity."
+  ],
+  "nonGoals": [
+    "Storing user profiles or posts on the backend canister.",
+    "Gating any existing feed, search, or notification content behind authentication.",
+    "Custom username/password or social OAuth login flows.",
+    "Changing or migrating any existing mock data."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

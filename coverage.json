@@ -1,0 +1,52 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-03-03T04:13:10.579Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 2,
+    "implemented": 2,
+    "items": [
+      {
+        "id": "REQ-13",
+        "summary": "Add an Internet Identity login button to the navigation sidebar (desktop) and mobile bottom tab bar. When the user is not authenticated, show a 'Log In' button using the `useInternetIdentity` hook's `login` function. When authenticated, show the user's avatar/principal and a 'Log Out' button that calls the `logout` function.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/Navigation.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/Navigation.tsx"
+        ]
+      },
+      {
+        "id": "REQ-14",
+        "summary": "Display the logged-in user's Internet Identity principal (truncated) in place of the generic 'My Profile' entry in the navigation and on the Profile page header when authenticated. When unauthenticated, fall back to the existing mock profile display.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/Navigation.tsx",
+          "frontend/src/pages/Profile.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/Navigation.tsx",
+          "frontend/src/pages/Profile.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "build-template/README.md",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/components/Navigation.tsx",
+    "frontend/src/pages/Profile.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

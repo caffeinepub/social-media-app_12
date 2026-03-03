@@ -1,0 +1,139 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "A modern social media web application called 'Pulse' with feed, stories, post creation, user profiles, notifications, search, trending hashtags, and dark/light mode toggle using mock data.",
+  "architectural_notes": [
+    "React SPA with all state managed locally via useState hooks",
+    "Mock data arrays (SAMPLE_USERS, INITIAL_POSTS, STORIES, NOTIFICATIONS, TRENDING) used for all content",
+    "Dark/light mode implemented via inline styles toggled by darkMode state",
+    "Bottom tab navigation with 5 items: Home, Search, Create, Notifications, Profile"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-implement-a-scrollable-home-feed-page-displaying-posts-from-mock-users-each-post-showing-avatar-username-timestamp-post-text-optional-image-and-interactive-like-comment-and-share-buttons-with-counts",
+      "title": "Implement a scrollable home feed page displaying posts from mock users, each post showing avatar, username, timestamp, post text, optional image, and interactive like, comment, and share buttons with counts.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-post-composer-at-the-top-of-the-feed-or-via-a-modal-allowing-users-to-create-new-posts-with-text-input-and-optional-image-upload-appending-the-new-post-to-the-feed-on-submission",
+      "title": "Add a post composer at the top of the feed (or via a modal) allowing users to create new posts with text input and optional image upload, appending the new post to the feed on submission.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-user-profile-pages-displaying-the-user-s-avatar-display-name-handle-bio-follower-count-following-count-and-a-grid-of-that-user-s-posts-populate-with-mock-data-for-at-least-3-distinct-user-profiles",
+      "title": "Build user profile pages displaying the user's avatar, display name, handle, bio, follower count, following count, and a grid of that user's posts. Populate with mock data for at least 3 distinct user profiles.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-horizontally-scrollable-stories-bar-at-the-top-of-the-home-feed-showing-circular-story-thumbnails-with-user-avatars-and-names-using-mock-story-data-for-at-least-6-users",
+      "title": "Add a horizontally scrollable stories bar at the top of the home feed, showing circular story thumbnails with user avatars and names, using mock story data for at least 6 users.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-persistent-navigation-bar-with-icon-buttons-for-home-search-create-notifications-and-profile-supporting-both-desktop-sidebar-or-top-bar-and-mobile-bottom-tab-bar-layouts",
+      "title": "Implement a persistent navigation bar with icon buttons for Home, Search, Create, Notifications, and Profile, supporting both desktop (sidebar or top bar) and mobile (bottom tab bar) layouts.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-notifications-panel-page-displaying-mock-notifications-for-likes-comments-and-new-follows-each-with-actor-avatar-action-description-and-timestamp",
+      "title": "Create a notifications panel/page displaying mock notifications for likes, comments, and new follows, each with actor avatar, action description, and timestamp.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-search-page-with-a-text-input-for-querying-users-and-posts-displaying-mock-results-for-users-with-avatar-name-handle-and-trending-posts-hashtags-filtered-by-the-search-term",
+      "title": "Build a search page with a text input for querying users and posts, displaying mock results for users (with avatar, name, handle) and trending posts/hashtags filtered by the search term.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-interactive-like-and-comment-functionality-on-each-feed-post-toggling-the-like-button-updates-the-like-count-the-comment-section-expands-inline-showing-existing-mock-comments-and-an-input-to-add-new-comments",
+      "title": "Implement interactive like and comment functionality on each feed post: toggling the like button updates the like count; the comment section expands inline showing existing mock comments and an input to add new comments.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-trending-hashtags-sidebar-visible-on-desktop-or-a-dedicated-section-on-mobile-showing-at-least-8-mock-trending-topics-with-hashtag-name-and-post-count",
+      "title": "Add a trending hashtags sidebar (visible on desktop) or a dedicated section (on mobile) showing at least 8 mock trending topics with hashtag name and post count.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-dark-light-mode-toggle-accessible-from-the-navigation-bar-or-profile-menu-persisting-the-user-s-preference-in-localstorage-and-applying-the-chosen-theme-consistently-across-all-pages",
+      "title": "Implement a dark/light mode toggle accessible from the navigation bar or profile menu, persisting the user's preference in localStorage and applying the chosen theme consistently across all pages.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-cohesive-visual-design-inspired-by-modern-social-platforms-use-a-warm-coral-rose-and-off-white-palette-for-light-mode-with-deep-charcoal-for-dark-mode-rounded-cards-smooth-hover-transition-animations-clean-sans-serif-typography-and-a-responsive-layout-optimized-for-both-desktop-and-mobile",
+      "title": "Apply a cohesive visual design inspired by modern social platforms: use a warm coral/rose and off-white palette for light mode with deep charcoal for dark mode, rounded cards, smooth hover/transition animations, clean sans-serif typography, and a responsive layout optimized for both desktop and mobile.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-populate-the-entire-application-with-realistic-mock-data-at-least-10-mock-users-with-avatars-initials-based-bios-follower-following-counts-at-least-15-feed-posts-with-text-and-some-with-images-at-least-8-notifications-and-at-least-6-story-entries",
+      "title": "Populate the entire application with realistic mock data: at least 10 mock users with avatars (initials-based), bios, follower/following counts; at least 15 feed posts with text and some with images; at least 8 notifications; and at least 6 story entries.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-internet-identity-login-button-to-the-navigation-sidebar-desktop-and-mobile-bottom-tab-bar-when-the-user-is-not-authenticated-show-a-log-in-button-using-the-useinternetidentity-hook-s-login-function-when-authenticated-show-the-user-s-avatar-principal-and-a-log-out-button-that-calls-the-logout-function",
+      "title": "Add an Internet Identity login button to the navigation sidebar (desktop) and mobile bottom tab bar. When the user is not authenticated, show a 'Log In' button using the `useInternetIdentity` hook's `login` function. When authenticated, show the user's avatar/principal and a 'Log Out' button that calls the `logout` function.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-display-the-logged-in-user-s-internet-identity-principal-truncated-in-place-of-the-generic-my-profile-entry-in-the-navigation-and-on-the-profile-page-header-when-authenticated-when-unauthenticated-fall-back-to-the-existing-mock-profile-display",
+      "title": "Display the logged-in user's Internet Identity principal (truncated) in place of the generic 'My Profile' entry in the navigation and on the Profile page header when authenticated. When unauthenticated, fall back to the existing mock profile display.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Add a login option/authentication flow so users can create accounts and log in",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Pulse",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
